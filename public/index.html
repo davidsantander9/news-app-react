@@ -28,6 +28,16 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <div class="carousel carousel-slider center" data-indicators="true">
+      <div class="carousel-item red white-text" href="#one!">
+        <h2>First Panel</h2>
+        <p class="white-text">This is your first panel</p>
+      </div>
+      <div class="carousel-item amber white-text" href="#two!">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+      </div>
+  </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -41,4 +51,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   </body>
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+    });
+
+    Materialize.toast('I am a toast!', 4000);
+  </script>
 </html>

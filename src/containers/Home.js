@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 import api from '../api';
-import Carousel from './components/Carousel';
+import Carousel from '../components/Carousel';
+import Test from '../components/Test';
 import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
@@ -30,6 +31,7 @@ class Home extends Component {
     return (
       <div className="App">
       <Carousel/>
+      <Test/>
       <div className="row">
       {
         this.state.sources.map((source)=>

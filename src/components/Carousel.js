@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from '../api';
 import { NavLink } from 'react-router-dom';
 
+
 class Carousel extends Component {
   constructor(props){
     super(props);
@@ -26,21 +27,19 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div className="App">
-
-      <div className="carousel carousel-slider center" data-indicators="true">
-      <div className="carousel-fixed-item center">
-        <a className="btn waves-effect white grey-text darken-text-2">button</a>
-      </div>
+      <div className="carousel carousel-slider center cyan lighten-5" data-indicators="true">
+        <div className="carousel-fixed-item center">
+          <a className="btn waves-effect white grey-text darken-text-2">button</a>
+        </div>
       {
         this.state.sources.map((source)=>
-          <div className="carousel-item red white-text" key={source.id}>
+          <div className="carousel-item red white-text" key={source.id} href="#one!">
+            <p>adsas</p>
             <h2>{source.name}</h2>
             <p className="white-text">{source.description}</p>
           </div>
       )
       }
-      </div>
       </div>
     );
   }
