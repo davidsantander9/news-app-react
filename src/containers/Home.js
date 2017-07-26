@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 import api from '../api';
-import Carousel from '../components/Carousel';
+import NewsSources from '../components/News-Sources';
+import Aside from '../components/Aside';
 import Test from '../components/Test';
 import { NavLink } from 'react-router-dom';
 
@@ -19,7 +20,6 @@ class Home extends Component {
     this.setState({
       sources: response.sources
     })
-    console.log(response);
   }
 
   componentDidMount(){
@@ -30,26 +30,11 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-      <Carousel/>
-      <Test/>
-      <div className="row">
-      {
-        this.state.sources.map((source)=>
-        <div  key={source.id} className="col s12 m6">
-          <div className="card grey lighten-4">
-            <div className="card-content black-text">
-              <span  className="card-title">{source.name}</span>
-              <p>{source.description}</p>
-            </div>
-            <div className="card-action">
-              <NavLink to={`/articles/${source.id}`}>{source.name}</NavLink>
-            </div>
-          </div>
+        <div className="row">
+          <Test/>
+          <NewsSources/>
+          <Aside/>
         </div>
-      )
-      }
-      <img src="http://www.revistamoi.com/wp-content/uploads/2017/02/rappi.jpg"/>
-      </div>
       </div>
     );
   }

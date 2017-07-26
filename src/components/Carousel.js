@@ -20,20 +20,22 @@ class Carousel extends Component {
     console.log(response);
   }
 
-  componentDidMount(){
+
+
+  // componentDidMount(){
+  //   this.getSources();
+  // }
+
+  componentWillMount(){
     this.getSources();
   }
-
 
   render() {
     return (
       <div className="carousel carousel-slider center cyan lighten-5" data-indicators="true">
-        <div className="carousel-fixed-item center">
-          <a className="btn waves-effect white grey-text darken-text-2">button</a>
-        </div>
       {
         this.state.sources.map((source)=>
-          <div className="carousel-item red white-text" key={source.id} href="#one!">
+          <div className="carousel-item red white-text" key={source.id}>
             <p>adsas</p>
             <h2>{source.name}</h2>
             <p className="white-text">{source.description}</p>
